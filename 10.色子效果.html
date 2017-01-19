@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      body {
+        background-color: gray;
+      }
+      
+      ul {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+        list-style: none;
+        padding: 0;
+        border: 1px solid gray;
+        background-color: #ccc;
+      }
+      
+      div {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: black;
+      }
+      
+      .one li {
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+        display: flex;
+        /*  主轴 居中*/
+        justify-content: center;
+        align-items: center;
+      }
+      /* 二号色子 */
+      
+      .two li {
+        display: flex;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+      }
+      /* 三号色子 */
+      
+      .three li {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      
+      .three li div:nth-child(1) {
+        align-self: flex-start;
+        margin-left: 10px;
+      }
+      
+      .three li div:nth-child(3) {
+        align-self: flex-end;
+      }
+      /* 四号 色子 */
+      /*  父盒子 也开启弹性 */
+      
+      .four {
+        display: flex;
+        flex-wrap: wrap;
+        /* 换行 以后 副轴的 内容排布 */
+        align-content: space-around;
+      }
+      
+      .four li {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+      /* 五号色子 */
+      
+      .five {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around;
+      }
+      
+      .five li {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+      /* 6个的色子 */
+      
+      .six {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around;
+      }
+      
+      .six li {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul class="one">
+      <li>
+        <div></div>
+      </li>
+    </ul>
+
+    <ul class="two">
+      <li>
+        <div></div>
+        <div></div>
+      </li>
+    </ul>
+
+    <ul class="three">
+      <li>
+        <div></div>
+        <div></div>
+        <div></div>
+      </li>
+    </ul>
+    <ul class="four">
+      <li>
+        <div></div>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+        <div></div>
+      </li>
+    </ul>
+    <ul class="five">
+      <li>
+        <div></div>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+        <div></div>
+      </li>
+    </ul>
+    <ul class="six">
+      <li>
+        <div></div>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+        <div></div>
+      </li>
+    </ul>
+  </body>
+
+</html>

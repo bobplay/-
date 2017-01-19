@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 100px auto;
+        /* 
+				 * 如果只是想让元素 在空间3d变幻时 能够被看到
+				 * 只需要在 父元素 上设置该属性即可
+				 * 如果需要有 近大 远小的 效果 才需要添加 perspective属性
+				 * perspective属性添加在祖先元素上即可
+				 *  */
+        transform-style: preserve-3d;
+        transition: all 2s;
+      }
+      
+      .box > div {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 200px;
+        font-size: 150px;
+        font-weight: 900;
+        position: absolute;
+        opacity: .5;
+      }
+      
+      .box > div:nth-child(1) {
+        background-color: orange;
+        transform: translateZ(100px);
+      }
+      
+      .box > div:nth-child(2) {
+        background-color: skyblue;
+        transform: rotateY(180deg) translateZ(100px);
+      }
+      
+      .box > div:nth-child(3) {
+        background-color: red;
+        transform: rotateY(90deg) translateZ(100px);
+      }
+      
+      .box > div:nth-child(4) {
+        background-color: pink;
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+      
+      .box > div:nth-child(5) {
+        background-color: green;
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      
+      .box > div:nth-child(6) {
+        background-color: yellow;
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+      
+      .box:hover {
+        transform: rotateY(180deg) rotateZ(45deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+  </body>
+
+</html>

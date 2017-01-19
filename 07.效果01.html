@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    
+    .show-box {
+      width: 300px;
+      height: 200px;
+      border: 4px solid lightgray;
+      margin: 100px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .img-box {
+      width: 100%;
+      height: 100%;
+      background: url('img/qt-dog.jpg') no-repeat center/cover;
+      transition:  all .3s; 
+    }
+    .info-box{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      color: black;
+      text-align: center;
+      font-family: '微软雅黑';
+      top:-100%;
+      opacity: .5;
+      transition:  all .3s;
+    }
+
+    .show-box:hover .img-box{
+      transform: scale(1.2,1.2);
+    }
+    .show-box:hover .info-box{
+      top:0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="show-box">
+    <div class="img-box"></div>
+    <div class="info-box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis voluptatum dolorum, maiores numquam. Mollitia soluta cum, modi. In cumque at architecto quaerat illo quidem praesentium distinctio, blanditiis laboriosam, assumenda perspiciatis.</div>
+  </div>
+</body>
+
+</html>

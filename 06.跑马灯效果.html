@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      body {
+        perspective: 1000px;
+        background-color: skyblue;
+        overflow: hidden;
+        border: 1px solid transparent;
+      }
+      
+      .container {
+        margin: 200px auto;
+        width: 200px;
+        height: 200px;
+        background: url(img/dog2.jpg) no-repeat center/cover;
+        position: relative;
+        transform-style: preserve-3d;
+      }
+      
+      .container > .item {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        background: url(img/dog.gif) no-repeat center /cover;
+        transform-style: preserve-3d;
+      }
+      
+      .container > .item:nth-child(1) {
+        transform: rotateY(0deg) translateZ(300px);
+      }
+      
+      .container > .item:nth-child(2) {
+        transform: rotateY(60deg) translateZ(300px);
+      }
+      
+      .container > .item:nth-child(3) {
+        transform: rotateY(120deg) translateZ(300px);
+      }
+      
+      .container > .item:nth-child(4) {
+        transform: rotateY(180deg) translateZ(300px);
+      }
+      
+      .container > .item:nth-child(5) {
+        transform: rotateY(240deg) translateZ(300px);
+      }
+      
+      .container > .item:nth-child(6) {
+        transform: rotateY(300deg) translateZ(300px);
+      }
+      /*太阳*/
+      
+      .sun {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%) translateY(150px);
+        opacity: 0;
+        border-radius: 50%;
+        background: radial-gradient(75px at center, rgb(255, 165, 0), rgba(255, 165, 0, 0));
+      }
+      
+      /* 伪元素制作影子 初始状态 */
+     .item::before{
+     	content: '';
+     	position: absolute;
+     	bottom: 0px;
+     	width: 100%;
+     	height: 0;
+     	transform-origin: bottom center;
+     	transform: rotateX(-90deg);
+     	background: linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,.5),rgba(0,0,0,0));
+     }
+      
+      /* bodyhover 出太阳 */
+      *,::before,::after{
+      	transition: all 2s linear;
+      }
+      
+      body:hover .container {
+      	transform: rotateY(360deg);
+      }
+      body:hover .item::before{
+      	height: 100%;
+      }
+      body:hover .sun{
+        transform: translateX(-50%) translateY(0px);
+        opacity: 1;
+      }
+    
+    </style>
+  </head>
+
+  <body>
+    <div class="sun"></div>
+    <div class="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </body>
+
+</html>

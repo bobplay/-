@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: skyblue;
+    }
+    
+    .fish {
+      width: 174px;
+      height: 126px;
+      background: url('img/fish.png');
+    }
+    
+    @keyframes autoSwim {
+      from {}
+      to {
+        background-position: 0 -1512px;
+      }
+    }
+    
+    .autoSwim {
+      animation-name: autoSwim;
+      animation-timing-function: steps(12);
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+    
+    @keyframes autoMove {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(1000px);
+      }
+    }
+    
+    .autoMove {
+      animation-name: autoMove;
+      animation-timing-function: linear;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .animationBoth{
+      animation: autoMove 2s linear 2 alternate,autoSwim 1s steps(12) infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fish animationBoth"></div>
+</body>
+
+</html>
